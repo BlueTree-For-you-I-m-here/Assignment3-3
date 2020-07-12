@@ -58,6 +58,21 @@
          idNum--;
       });
 
+      //-状態ボタンのテキスト変更機能
+      const changeState = (conditionTd_a) => {
+         if (conditionTd_a.textContent !== "完了") {
+            conditionTd_a.textContent = "完了";
+         } else {
+            // conditionTd_a.textContent = tasks[0].condition_a;
+            conditionTd_a.textContent = "作業中";
+         }
+      };
+
+      //状態ボタンクリック時の動作
+      conditionTd_a.addEventListener('click', () => {
+         changeState(conditionTd_a);
+      });
+
       tasks = [];
    };
 
